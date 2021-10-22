@@ -49,7 +49,7 @@ container.addEventListener('mousemove', (e) => {
 // ANIMATION IN
 container.addEventListener('mouseenter', (e) => {
     homeCircle.style.transition = `none`;
-    homeCircleImg.style.transform = `translateZ(150px)`;
+    // homeCircleImg.style.transform = `translateZ(150px)`;
     // homeCircleImg.style.transform = `translateZ(200px) rotateZ(-45deg)`;
 });
 
@@ -57,5 +57,5 @@ container.addEventListener('mouseenter', (e) => {
 container.addEventListener('mouseleave', (e) => {
     homeCircle.style.transform = `rotateY(${0}deg) rotateX(${0}deg)`;
     homeCircle.style.transition = `all 400ms ease`;
-    homeCircleImg.style.transform = `translateZ(0px)`;
+    // homeCircleImg.style.transform = `translateZ(0px)`;
 });
