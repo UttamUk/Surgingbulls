@@ -15,7 +15,7 @@ const roadMapSec = document.querySelectorAll('.rd-bx');
 
 const options = {
 	root: null,
-	threshold: 0.25,
+	threshold: 0,
 	rootMargin: '-130px'
 }
 const observer = new IntersectionObserver(function (entries, observer) {
@@ -34,3 +34,28 @@ const observer = new IntersectionObserver(function (entries, observer) {
 roadMapSec.forEach(section => {
 	observer.observe(section);
 })
+
+
+const container = document.querySelector('#home-rt');
+const homeCircle = document.querySelector('#home-cirlce');
+const homeCircleImg = document.querySelector('.main-imp');
+
+container.addEventListener('mousemove', (e) => {
+    let xAxis = (window.innerWidth / 2 - e.clientX) / 20;
+    let yAxis = (window.innerHeight / 2 - e.clientY) / 20;
+    homeCircle.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+});
+
+// ANIMATION IN
+container.addEventListener('mouseenter', (e) => {
+    homeCircle.style.transition = `none`;
+    homeCircleImg.style.transform = `translateZ(150px)`;
+    // homeCircleImg.style.transform = `translateZ(200px) rotateZ(-45deg)`;
+});
+
+// STOP ANIMATION
+container.addEventListener('mouseleave', (e) => {
+    homeCircle.style.transform = `rotateY(${0}deg) rotateX(${0}deg)`;
+    homeCircle.style.transition = `all 400ms ease`;
+    homeCircleImg.style.transform = `translateZ(0px)`;
+});
